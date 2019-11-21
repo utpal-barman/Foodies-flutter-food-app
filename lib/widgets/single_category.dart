@@ -11,41 +11,44 @@ class SingleCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => _selectSingleItem(context, title, catId),
-      splashColor: Theme.of(context).primaryColor,
-      borderRadius: BorderRadius.circular(16),
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(colors: <Color>[
-            color.withOpacity(0.7),
-            color,
-          ]),
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            // Image.network(
-            //   "http://lorempixel.com/400/200/",
-            //   fit: BoxFit.cover,
-            //   height: 60,
-            //   width: 250,
-            // ),
-            Text(
-              title,
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 18),
-            ),
-            // FlatButton(
-            //   color: Colors.amber,
-            //   shape: RoundedRectangleBorder(
-            //       borderRadius: BorderRadius.circular(30)),
-            //   child: Text("Order Now"),
-            //   onPressed: () {},
-            // )
-          ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: InkWell(
+        onTap: () => _selectSingleItem(context, title, catId),
+        splashColor: Theme.of(context).primaryColor,
+        borderRadius: BorderRadius.circular(16),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(colors: <Color>[
+              color.withOpacity(0.7),
+              color,
+            ]),
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              // Image.network(
+              //   "http://lorempixel.com/400/200/",
+              //   fit: BoxFit.cover,
+              //   height: 60,
+              //   width: 250,
+              // ),
+              Text(
+                title,
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 18),
+              ),
+              // FlatButton(
+              //   color: Colors.amber,
+              //   shape: RoundedRectangleBorder(
+              //       borderRadius: BorderRadius.circular(30)),
+              //   child: Text("Order Now"),
+              //   onPressed: () {},
+              // )
+            ],
+          ),
         ),
       ),
     );

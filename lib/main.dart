@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import './routes/route_category.dart';
+import 'package:meal_app/routes/route_tab.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,9 +7,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      
+      title: 'Foodies',
       theme: ThemeData(
-        primarySwatch: Colors.lime,
+        primarySwatch: Colors.amber,
         fontFamily: 'Raleway-Bold',
       ),
       home: MyHomePage(title: 'Foodies'),
@@ -30,16 +30,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        leading: Icon(Icons.menu),
-        title: Text(widget.title),
-        centerTitle: true,
-        actions: <Widget>[Icon(Icons.settings)],
-      ),
-      body: CategoriesScreen(),
-    );
+    return TabRoute();
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal_app/routes/route_meal_detail.dart';
 import '../data/data.dart';
 
 class MealList extends StatelessWidget {
@@ -21,14 +22,15 @@ class MealList extends StatelessWidget {
       body: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
           return InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                return MealDetailRoute(mealNameList[index].id);
+              }));
+            },
             child: Column(children: <Widget>[
               ListTile(
-                leading: Image.network(
-                  mealNameList[index].imageUrl,
-                  fit: BoxFit.cover,
-                  width: 50,
-                  height: 50,
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(mealNameList[index].imageUrl),
                 ),
                 title: Text(mealNameList[index].title),
                 subtitle:
